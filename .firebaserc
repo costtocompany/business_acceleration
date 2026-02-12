@@ -1,0 +1,21 @@
+{
+  "projects": {
+    "default": "costtocompanyapp"
+  },
+  "targets": {
+    "costtocompanyapp": {
+      "hosting": {
+        "costtocompany": [
+          "costtocompany"
+        ],
+        "costtocompanytamil": [
+          "costtocompanytamil"
+        ],
+        "costtocompanyapp": [
+          "costtocompanyapp"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
