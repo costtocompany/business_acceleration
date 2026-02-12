@@ -1,21 +1,6 @@
 {
   "hosting": [
     {
-      "target": "default",
-      "public": "public",
-      "ignore": [
-        "firebase.json",
-        "**/.*",
-        "**/node_modules/**"
-      ],
-      "rewrites": [
-        {
-          "source": "**",
-          "destination": "/index.html"
-        }
-      ]
-    },
-    {
       "target": "costtocompany",
       "public": "public",
       "ignore": [
