@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Growth Acceleration Framework – Batch 3 | Cost To Company</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --yellow: #ffb300;
+      --dark: #111111;
+      --gray: #f7f7f7;
+      --text: #222222;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
+        system-ui, sans-serif;
+      background: #ffffff;
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 18px 60px;
+    }
+
+    .card, .pill, .btn-primary, .feature-box {
+      transition: all 0.25s ease;
+    }
+
+    @keyframes ctaPulse {
+      0%   { transform: translateY(0) scale(1); box-shadow: 0 8px 20px rgba(0,0,0,0.28); }
+      50%  { transform: translateY(-2px) scale(1.04); box-shadow: 0 14px 32px rgba(0,0,0,0.34); }
+      100% { transform: translateY(0) scale(1); box-shadow: 0 8px 20px rgba(0,0,0,0.28); }
+    }
+    .btn-primary.cta-animated {
+      animation: ctaPulse 2.2s ease-in-out infinite;
+    }
+    .btn-primary.cta-animated:hover {
+      animation-play-state: paused;
+    }
+
+    /* HERO */
+    .hero { text-align: center; margin-bottom: 48px; }
+
+    .hero-topline {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #555;
+      margin-bottom: 18px;
+    }
+
+    .gaf-box {
+      display: inline-block;
+      padding: 10px 32px 14px;
+      border-radius: 999px;
+      background: var(--yellow);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.22);
+      margin-bottom: 16px;
+    }
+    .gaf-title {
+      font-size: 28px;
+      font-weight: 800;
+      color: #111;
+      white-space: nowrap;
+    }
+    .gaf-subtitle {
+      margin-top: 4px;
+      font-size: 18px;
+      font-weight: 700;
+      color: #222;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 16px auto 0;
+      font-size: 15px;
+      color: #555;
+    }
+
+    .hero-main {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .hero-images-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+
+    /* LOGO HALF SIZE */
+    .hero-logo-block {
+      width: 130px;                 /* was 260px */
+      border-radius: 16px;          /* was 32px */
+      padding: 11px;                /* was 22px */
+      box-shadow: 0 14px 32px rgba(0,0,0,0.55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-logo-block-inner {
+      width: 100%;
+      background: #ffffff;
+      border-radius: 10px;          /* was 20px */
+      padding: 8px;                 /* was 14px */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-logo-block-inner img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .hero-growth-image {
+      max-width: 460px;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 22px 52px rgba(0,0,0,0.4);
+      background: #ffffff;
+    }
+    .hero-growth-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    .info-strip {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(120px, 1fr));
+      gap: 14px;
+    }
+    .info-item {
+      background: #000;
+      color: #fff;
+      border-radius: 18px;
+      padding: 16px 14px;
+      text-align: center;
+      font-size: 13px;
+      box-shadow: 0 14px 32px rgba(0,0,0,0.45);
+    }
+    .info-item-title {
+      font-weight: 600;
+      margin-bottom: 4px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 11px;
+      opacity: 0.85;
+    }
+    .info-item-value {
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .btn-primary {
+      margin-top: 28px;
+      display: inline-block;
+      background: var(--yellow);
+      color: #000;
+      font-weight: 700;
+      padding: 13px 36px;
+      border-radius: 999px;
+      font-size: 15px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.28);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.36);
+      background: #ffc933;
+    }
+    .sub-price { margin-top: 6px; font-size: 12px; color: #666; }
+
+    section { margin-top: 54px; }
+    h2.section-title {
+      font-size: 32px;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 24px;
+      letter-spacing: 0.03em;
+    }
+
+    .why-list { max-width: 860px; margin: 0 auto; }
+    .why-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+    .why-number {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #000;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .why-text h3 {
+      font-size: 20px;
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+    .why-text p {
+      font-size: 15px;
+      color: #555;
+    }
+
+    .learn-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(240px, 1fr));
+      gap: 18px;
+    }
+    .feature-box {
+      border-radius: 18px;
+      padding: 20px 18px;
+      background: #ffffff;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    }
+    .feature-box:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 26px rgba(0,0,0,0.12);
+    }
+    .feature-time {
+      font-size: 12px;
+      font-weight: 700;
+      color: #777;
+      margin-bottom: 4px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .feature-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .feature-list {
+      margin-top: 6px;
+      padding-left: 18px;
+      font-size: 14px;
+      color: #444;
+    }
+    .feature-list li { margin-bottom: 4px; }
+
+    .coach {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 2fr);
+      gap: 26px;
+      align-items: center;
+    }
+    .coach img {
+      width: 100%;
+      border-radius: 18px;
+      object-fit: cover;
+      box-shadow: 0 14px 34px rgba(0,0,0,0.35);
+    }
+    .coach h3 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+    .coach h3 a { text-decoration: underline; text-decoration-thickness: 1.5px; }
+    .coach p {
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 8px;
+    }
+    .coach-social {
+      margin-top: 10px;
+      display: flex;
+      gap: 26px;
+      font-size: 13px;
+    }
+    .coach-social span strong {
+      display: block;
+      font-size: 14px;
+      margin-top: 2px;
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(220px, 1fr));
+      gap: 18px;
+    }
+    .testimonial-card {
+      background: #ffffff;
+      padding: 18px 16px;
+      border-radius: 18px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      font-size: 14px;
+      color: #555;
+    }
+    .testimonial-name {
+      margin-top: 10px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .testimonial-role {
+      font-size: 12px;
+      color: #777;
+    }
+
+    .faq { max-width: 860px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid #e3e3e3; padding: 12px 0; }
+    .faq-q {
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    .faq-a {
+      font-size: 14px;
+      color: #555;
+      margin-top: 4px;
+      display: none;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 11px;
+      color: #777;
+      text-align: center;
+      border-top: 1px solid #eee;
+      padding-top: 16px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-main { gap: 18px; }
+      .hero-images-row { gap: 20px; }
+      .info-strip { grid-template-columns: repeat(2, minmax(140px, 1fr)); }
+      .coach { grid-template-columns: 1fr; }
+      .testimonials { grid-template-columns: 1fr 1fr; }
+      .learn-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .testimonials { grid-template-columns: 1fr; }
+      .info-strip { grid-template-columns: 1fr 1fr; }
+      .gaf-title { font-size: 22px; white-space: normal; }
+      .gaf-subtitle { font-size: 16px; }
+      .hero-topline { font-size: 16px; letter-spacing: 0.12em; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+  <header class="hero">
+    <div class="hero-topline">COST TO COMPANY PRESENTS</div>
+
+    <div class="gaf-box">
+      <div class="gaf-title">Growth Acceleration Framework – Batch 3</div>
+      <div class="gaf-subtitle">(தொழில் வளர்ச்சி முடுக்க திட்டம்)</div>
+    </div>
+
+    <p>
+      Master the Growth Acceleration Framework to organise your marketing, sales and team-building efforts so that your business moves from random growth to predictable scale without losing authenticity.
+    </p>
+
+    <div class="hero-main">
+      <div class="hero-images-row">
+        <div class="hero-logo-block">
+          <div class="hero-logo-block-inner">
+            <img src="CTC-Logo.jpg" alt="Cost To Company logo" />
+          </div>
+        </div>
+
+        <div class="hero-growth-image">
+          <img src="growth-acceleration-plan.jpeg" alt="Growth Acceleration Plan illustration" />
+        </div>
+      </div>
+
+      <div class="info-strip">
+        <div class="info-item">
+          <div class="info-item-title">DATE</div>
+          <div class="info-item-value">To be announced</div>
+        </div>
+        <div class="info-item">
+          <div class="info-item-title">TIME</div>
+          <div class="info-item-value">3 Days • Live</div>
+        </div>
+        <div class="info-item">
+          <div class="info-item-title">LANGUAGE</div>
+          <div class="info-item-value"> தமிழ்</div>
+        </div>
+        <div class="info-item">
+          <div class="info-item-title">PLATFORM</div>
+          <div class="info-item-value">Online</div>
+        </div>
+      </div>
+    </div>
+
+    <a class="btn-primary cta-animated" href="https://rzp.io/rzp/YLsJqfN" target="_blank" rel="noopener">
+      Get Your Tickets
+    </a>
+
+  </header>
+  
+  <!-- SECTION DIVIDER BETWEEN HERO & WHY -->
+  <div style="
+      margin-top: 40px;
+      border-top: 1px solid #e5e5e5;
+      box-shadow: 0 -12px 30px rgba(0,0,0,0.06);
+    ">
+  </div>
+
+  <!-- new wrapper with light grey background for next 'page' -->
+  <div style="
+      margin-top: 0;
+      padding: 40px 0 10px;
+      background: #fafafa;
+      border-radius: 32px 32px 0 0;
+    ">
+<!-- ABOUT ORGANISER SECTION -->
+      <div class="about-organiser-section">
+        <h3 class="about-organiser-title">About Organiser</h3>
+        <div class="about-organiser-box">
+          <div class="about-organiser-item">
+            <div class="about-organiser-item-title">Every Saturday – Free MSME Webinar</div>
+            <div class="about-organiser-item-desc">Live 5 – 6 PM with business founders &amp; subject‑matter experts sharing what actually works.</div>
+          </div>
+          <div class="about-organiser-item">
+            <div class="about-organiser-item-title">2,000+ Serious Business Owners</div>
+            <div class="about-organiser-item-desc">Highly engaged WhatsApp community of MSME founders who learn, discuss and implement together.</div>
+          </div>
+          <div class="about-organiser-item">
+            <div class="about-organiser-item-title">5,000+ Substack Growth Subscribers</div>
+            <div class="about-organiser-item-desc">Business insights and practical growth ideas explained clearly in Tamil.</div>
+          </div>
+          <div class="about-organiser-item">
+            <div class="about-organiser-item-title">Built For Tier 3 &amp; 4 MSME Founders</div>
+            <div class="about-organiser-item-desc">Tamil‑first content tuned to the realities of small‑town and emerging entrepreneurs.</div>
+          </div>
+          <div class="whatsapp-cta">
+            <div class="whatsapp-cta-text">Join our official WhatsApp group to get upcoming webinar updates</div>
+            <a href="https://chat.whatsapp.com/FcN2FCqTaBV5v4lSvG3aQU" target="_blank" rel="noopener" class="whatsapp-btn">Join WhatsApp Group</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!-- WHY ATTEND -->
+    <section>
+      <h2 class="section-title">Why Should You Attend?</h2>
+      <div class="why-list">
+        <div class="why-item">
+          <div class="why-number">1</div>
+          <div class="why-text">
+            <h3>Your shortcut to years of experience</h3>
+            <p>Save time and money by learning directly from proven industry experience, so you avoid the most common growth mistakes founders make in the first 10 years.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-number">2</div>
+          <div class="why-text">
+            <h3>Don’t just learn – transform</h3>
+            <p>This is a hands-on workshop where you implement frameworks, work on your own business and leave with clear action steps, not just notes.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-number">3</div>
+          <div class="why-text">
+            <h3>Designed for MSME owners</h3>
+            <p>Built specifically for Indian MSMEs so every example, worksheet and framework fits local reality, not theory from a different market.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-number">4</div>
+          <div class="why-text">
+            <h3>Turn confusion into clarity</h3>
+            <p>Walk out with a simple Growth Acceleration roadmap that connects customers, marketing, sales and team into one clear system.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:20px;">
+        <a class="btn-primary cta-animated" href="https://rzp.io/rzp/YLsJqfN" target="_blank" rel="noopener">
+          Secure My Spot Now
+        </a>
+    </section>
+  <!-- SIMPLE SINGLE-LINE DIVIDER -->
+  <hr style="
+      margin: 40px auto 32px;
+      max-width: 960px;
+      border: 0;
+      border-top: 1px solid #dedede;
+    ">
+
+  </header>
+  <!-- WHY ATTEND -->
+  <section>
+    <h2 class="section-title">Why Should You Attend?</h2>
+    <div class="why-list">
+      <div class="why-item">
+        <div class="why-number">1</div>
+        <div class="why-text">
+          <h3>Your shortcut to years of experience</h3>
+          <p>Save time and money by learning directly from proven industry experience, so you avoid the most common growth mistakes founders make in the first 10 years.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-number">2</div>
+        <div class="why-text">
+          <h3>Don’t just learn – transform</h3>
+          <p>This is a hands-on workshop where you implement frameworks, work on your own business and leave with clear action steps, not just notes.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-number">3</div>
+        <div class="why-text">
+          <h3>Designed for MSME owners</h3>
+          <p>Built specifically for Indian MSMEs so every example, worksheet and framework fits local reality, not theory from a different market.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-number">4</div>
+        <div class="why-text">
+          <h3>Turn confusion into clarity</h3>
+          <p>Walk out with a simple Growth Acceleration roadmap that connects customers, marketing, sales and team into one clear system.</p>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:20px;">
+      <a class="btn-primary cta-animated" href="https://rzp.io/rzp/YLsJqfN" target="_blank" rel="noopener">
+        Secure My Spot Now
+      </a>
+      
+  </section>
+ </section>
+  <!-- SIMPLE SINGLE-LINE DIVIDER -->
+  <hr style="
+      margin: 40px auto 32px;
+      max-width: 960px;
+      border: 0;
+      border-top: 1px solid #dedede;
+    ">
+  <!-- WHAT YOU WILL LEARN – 3 DAYS -->
+  <section>
+    <h2 class="section-title">What You Will Learn</h2>
+    <p style="text-align:center; font-size:14px; color:#555; margin-bottom:18px;">
+      3-day intensive Growth Acceleration Framework for MSME business owners.
+    </p>
+
+    <div class="learn-grid">
+      <!-- Day 1 -->
+      <div class="feature-box">
+        <div class="feature-time">Day 1</div>
+        <div class="feature-title">Customer & Growth Foundations</div>
+        <ul class="feature-list">
+          <li>Introduction (அறிமுகம்)</li>
+          <li>Speed, Velocity &amp; Acceleration (வேகம், திசைவேகம், முடுக்கம்)</li>
+          <li>Need for growth acceleration (வளர்ச்சி முடுக்கத்துக்கான தேவை)</li>
+          <li>Company stages (வளர்ச்சி நிலைகள்)</li>
+          <li>Case study – 1 (வணிக உதாரணம் 1)</li>
+          <li>Existing Customer Analysis (வாடிக்கையாளர் சீராய்வு)</li>
+          <li>Customer segmentation (வாடிக்கையாளர்வகைப்பாடு)</li>
+          <li>Business stage customer fit (தொழில் நிலை வாடிக்கையாளர் ஓப்புகை)</li>
+          <li>Case study – 2 (வணிக உதாரணம் 2)</li>
+          <li>Q&amp;A (கேள்வி பதில்)</li>
+        </ul>
+      </div>
+
+      <!-- Day 2 -->
+      <div class="feature-box">
+        <div class="feature-time">Day 2</div>
+        <div class="feature-title">Offer, Positioning & Marketing</div>
+        <ul class="feature-list">
+          <li>Customer persona (உகந்த வாடிக்கையாளர் வரையறை)</li>
+          <li>Case study – 3 (வணிக உதாரணம் 3)</li>
+          <li>Problem–Solution–Product Fit (பிரச்சனை – தீர்வு – பொருள் ஓப்புகை)</li>
+          <li>Product + Category Positioning (பொருள், பொருள் பிரிவு கட்டமைத்தல்)</li>
+          <li>Case study – 4 (வணிக உதாரணம் 4)</li>
+          <li>Message creation (தகவல் உருவாக்கம்)</li>
+          <li>Medium selection (ஊடக தேர்வு)</li>
+          <li>Distribution (பரப்புதல்)</li>
+          <li>Marketing (சந்தைப்படுத்துதல்)</li>
+          <li>Case study – 5 (வணிக உதாரணம் 5)</li>
+          <li>Q&amp;A (கேள்வி பதில்)</li>
+        </ul>
+      </div>
+
+      <!-- Day 3 -->
+      <div class="feature-box">
+        <div class="feature-time">Day 3</div>
+        <div class="feature-title">Sales, Team & Scale</div>
+        <ul class="feature-list">
+          <li>Sales (விற்பனை)</li>
+          <li>Sales lead management (விற்பனை தரவு மேலாண்மை)</li>
+          <li>Case study – 6 (வணிக உதாரணம் 6)</li>
+          <li>Sales funnel building (விற்பனை புனல் மேலாண்மை)</li>
+          <li>Case study – 7 (வணிக உதாரணம் 7)</li>
+          <li>Team building (குழு கட்டமைத்தல்)</li>
+          <li>Case study – 8 (வணிக உதாரணம் 8)</li>
+          <li>Common growth mistakes (வளர்ச்சியின்போது நடக்கும் தவறுகள்)</li>
+          <li>Q&amp;A (கேள்வி பதில்)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:24px;">
+      <a class="btn-primary cta-animated" href="https://rzp.io/rzp/YLsJqfN" target="_blank" rel="noopener">
+        Ready To Accelerate Growth
+      </a>
+      <div class="sub-price">Batch 3 • Limited seats only</div>
+    </div>
+  </section>
+<!-- SIMPLE SINGLE-LINE DIVIDER -->
+  <hr style="
+      margin: 40px auto 32px;
+      max-width: 960px;
+      border: 0;
+      border-top: 1px solid #dedede;
+    ">
+
+  <!-- COACH -->
+  <section>
+    <h2 class="section-title">Meet Your Coach</h2>
+    <div class="coach">
+      <div>
+        <img src="coach-stage-placeholder.jpg" alt="Coach on stage" />
+      </div>
+      <div>
+        <h3><a href="https://www.linkedin.com/in/arulmuruganpalanichamy/" target="_blank" rel="noopener">Arul Murugan Palanichamy</a></h3>
+        <p>Arul Murugan is the founder of Snackexperts, a healthy snacking company that scaled from a small idea to a fast‑growing FMCG brand serving workplaces with made‑to‑order, preservative‑free snacks.</p>
+        <p>With a background in horticulture and food &amp; agri‑business management, he has led farm‑to‑factory supply chains, built zero‑inventory models and grown revenue month‑on‑month in a competitive market—turning experiments into repeatable growth systems.</p>
+        <p>In this Growth Acceleration Framework, Arul shares the same principles he uses in his own ventures: clear numbers, strong customer insight and simple processes that any MSME founder can use to grow in a planned, predictable way.</p>
+
+        <div class="coach-social">
+          <span>LinkedIn<strong>Connect &amp; follow insights</strong></span>
+          <span>Expertise<strong>MSMEs • Food • Supply Chain • Growth</strong></span>
+          <span>Languages<strong>Tamil &amp; English</strong></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section>
+    <h2 class="section-title">Success, Shared By Those Who Lived It</h2>
+    <div class="testimonials">
+      <div class="testimonial-card">
+        <p>“I first heard about the coach from a fellow entrepreneur who could not stop talking about the clarity he received. After implementing the frameworks, my inbound leads and confidence both increased.”</p>
+        <div class="testimonial-name">Participant A</div>
+        <div class="testimonial-role">Founder, Coaching Business</div>
+      </div>
+      <div class="testimonial-card">
+        <p>“This journey has been deeply transformative. My belief system and decision‑making improved, and I finally saw a clear direction for my brand and business.”</p>
+        <div class="testimonial-name">Participant B</div>
+        <div class="testimonial-role">Entrepreneur, Dubai</div>
+      </div>
+      <div class="testimonial-card">
+        <p>“I learned a lot both personally and professionally. The simple storytelling and consistent frameworks made it easy to implement right after the workshop.”</p>
+        <div class="testimonial-name">Participant C</div>
+        <div class="testimonial-role">Business Coach</div>
+      </div>
+    </div>
+  </section>
+<!-- SIMPLE SINGLE-LINE DIVIDER -->
+  <hr style="
+      margin: 40px auto 32px;
+      max-width: 960px;
+      border: 0;
+      border-top: 1px solid #dedede;
+    ">
+
+  <!-- FAQ -->
+  <section>
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq">
+      <div class="faq-item">
+        <div class="faq-q">Is this workshop suitable for beginners?</div>
+        <div class="faq-a">Yes. The content starts from basics and moves step‑by‑step, so both beginners and experienced founders can implement it comfortably.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">I already have a business running. Will this still help?</div>
+        <div class="faq-a">Absolutely. The frameworks focus on acceleration, so you can plug them into your existing marketing and sales to get more structured growth.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Will there be a recording?</div>
+        <div class="faq-a">Recordings will be provided to registered participants for limited-time access, along with key templates used in the sessions.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is the session interactive?</div>
+        <div class="faq-a">Yes. There will be live Q&amp;A, hot seats and case study discussions where you can ask questions about your own business.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section style="text-align:center; margin-top:44px;">
+    <h2 class="section-title">Ready To Elevate Your Business?</h2>
+    <p style="font-size:14px; color:#555; max-width:600px; margin:0 auto 18px;">
+      Join Growth Acceleration Framework – Batch 3 and turn scattered marketing and sales efforts into a clear, repeatable system for MSME growth.
+    </p>
+    <a class="btn-primary cta-animated" href="https://rzp.io/rzp/YLsJqfN" target="_blank" rel="noopener">
+      Elevate My Business
+    </a>
+    <div class="sub-price">Growth Acceleration Framework – Batch 3 • Limited seats</div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>© 2025 Cost To Company. All rights reserved.</div>
+    <div>Powered by Cost To Company • Designed by Cost To Company</div>
+  </footer>
+</div>
+
+<script>
+  // Minimal FAQ toggle
+  document.querySelectorAll('.faq-q').forEach(function (q) {
+    q.addEventListener('click', function () {
+      var a = this.nextElementSibling;
+      a.style.display = a.style.display === 'block' ? 'none' : 'block';
+    });
+  });
+</script>
+
+</body>
+</html>
