@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Growth Acceleration Framework | Cost To Company</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --yellow: #ffb300;
+      --dark: #111111;
+      --gray: #f7f7f7;
+      --text: #222222;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
+        system-ui, sans-serif;
+      background: #ffffff;
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 18px 60px;
+    }
+
+    .card, .pill, .btn-primary, .feature-box {
+      transition: all 0.25s ease;
+    }
+
+    @keyframes ctaPulse {
+      0%   { transform: translateY(0) scale(1); box-shadow: 0 8px 20px rgba(0,0,0,0.28); }
+      50%  { transform: translateY(-2px) scale(1.04); box-shadow: 0 14px 32px rgba(0,0,0,0.34); }
+      100% { transform: translateY(0) scale(1); box-shadow: 0 8px 20px rgba(0,0,0,0.28); }
+    }
+    .btn-primary.cta-animated {
+      animation: ctaPulse 2.2s ease-in-out infinite;
+    }
+    .btn-primary.cta-animated:hover {
+      animation-play-state: paused;
+    }
+
+    /* HERO */
+    .hero { text-align: center; margin-bottom: 48px; }
+
+    .hero-topline {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: #555;
+      margin-bottom: 18px;
+    }
+
+    .gaf-box {
+      display: inline-block;
+      padding: 10px 32px 14px;
+      background: var(--yellow);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.22);
+      margin-bottom: 16px;
+    }
+    .gaf-title {
+      font-size: 28px;
+      font-weight: 800;
+      color: #111;
+      white-space: nowrap;
+    }
+    .gaf-subtitle {
+      margin-top: 4px;
+      font-size: 18px;
+      font-weight: 700;
+      color: #222;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 16px auto 0;
+      font-size: 15px;
+      color: #000;
+    }
+
+    .hero-main {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .hero-images-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+
+    .hero-logo-block {
+      width: 130px;
+      border-radius: 16px;
+      padding: 11px;
+      box-shadow: 0 14px 32px rgba(0,0,0,0.55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+    }
+    .hero-logo-block-inner {
+      width: 100%;
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-logo-block-inner img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .hero-growth-image {
+      max-width: 460px;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 22px 52px rgba(0,0,0,0.4);
+      background: #ffffff;
+    }
+    .hero-growth-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    .info-strip {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(120px, 1fr));
+      gap: 14px;
+    }
+    .info-item {
+      background: #000;
+      color: #fff;
+      border-radius: 18px;
+      padding: 16px 14px;
+      text-align: center;
+      font-size: 13px;
+      box-shadow: 0 14px 32px rgba(0,0,0,0.45);
+    }
+    .info-item-title {
+      font-weight: 600;
+      margin-bottom: 4px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 11px;
+      opacity: 0.85;
+    }
+    .info-item-value {
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .btn-primary {
+      margin-top: 28px;
+      display: inline-block;
+      background: var(--yellow);
+      color: #000;
+      font-weight: 700;
+      padding: 13px 36px;
+      border-radius: 999px;
+      font-size: 15px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.28);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.36);
+      background: #ffc933;
+    }
+    .sub-price { margin-top: 6px; font-size: 12px; color: #666; }
+
+    section { margin-top: 54px; }
+    h2.section-title {
+      font-size: 32px;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 24px;
+      letter-spacing: 0.03em;
+    }
+
+    .why-list { max-width: 860px; margin: 0 auto; }
+    .why-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+    .why-number {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #000;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .why-text h3 {
+      font-size: 20px;
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+    .why-text p {
+      font-size: 15px;
+      color: #555;
+    }
+
+    .learn-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(240px, 1fr));
+      gap: 18px;
+    }
+    .feature-box {
+      border-radius: 18px;
+      padding: 20px 18px;
+      background: #ffffff;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    }
+    .feature-box:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 26px rgba(0,0,0,0.12);
+    }
+    .feature-time {
+      font-size: 12px;
+      font-weight: 700;
+      color: #777;
+      margin-bottom: 4px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .feature-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .feature-list {
+      margin-top: 6px;
+      padding-left: 18px;
+      font-size: 14px;
+      color: #444;
+    }
+    .feature-list li { margin-bottom: 4px; }
+
+    .about-organiser-wrapper {
+      margin-top: 0;
+      padding: 40px 0 10px;
+      background: #fafafa;
+      border-radius: 32px 32px 0 0;
+    }
+
+    .about-organiser-title {
+      font-size: 32px;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 24px;
+      letter-spacing: 0.03em;
+    }
+
+    .about-organiser-box {
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      padding: 0 18px;
+    }
+
+    .about-organiser-item {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 18px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    }
+
+    .about-organiser-item-title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .about-organiser-item-desc {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .whatsapp-cta {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, #ffb300 0%, #e8c051 100%);
+      color: white;
+      padding: 24px;
+      border-radius: 18px;
+      text-align: center;
+    }
+
+    .whatsapp-cta-text {
+      font-size: 15px;
+      margin-bottom: 12px;
+      display: block;
+      font-weight: 500;
+      color: black;
+    }
+
+    .whatsapp-btn {
+      display: inline-block;
+      background: #ffffff;
+      color: #128c7e;
+      padding: 10px 24px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: all 0.25s ease;
+      text-decoration: none;
+    }
+
+    .whatsapp-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .coach {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 2fr);
+      gap: 26px;
+      align-items: center;
+    }
+    .coach img {
+      width: 70%;
+      border-radius: 18px;
+      object-fit: cover;
+      box-shadow: 0 14px 34px rgba(0,0,0,0.35);
+      background: #ddd;
+      min-height: 300px;
+	  margin: 0 15%;
+    }
+    .coach h3 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+    .coach h3 a { text-decoration: underline; text-decoration-thickness: 1.5px; }
+    .coach p {
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 8px;
+    }
+    .coach-social {
+      margin-top: 10px;
+      display: flex;
+      gap: 26px;
+      font-size: 13px;
+    }
+    .coach-social span strong {
+      display: block;
+      font-size: 14px;
+      margin-top: 2px;
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(220px, 1fr));
+      gap: 18px;
+    }
+    .testimonial-card {
+      background: #ffffff;
+      padding: 18px 16px;
+      border-radius: 18px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      font-size: 14px;
+      color: #555;
+    }
+    .testimonial-name {
+      margin-top: 10px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .testimonial-role {
+      font-size: 12px;
+      color: #777;
+    }
+
+    .faq { max-width: 860px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid #e3e3e3; padding: 12px 0; }
+    .faq-q {
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-q::after {
+      content: '▼';
+      font-size: 12px;
+      transition: transform 0.3s ease;
+    }
+    .faq-q.active::after {
+      transform: rotate(-180deg);
+    }
+    .faq-a {
+      font-size: 14px;
+      color: #555;
+      margin-top: 4px;
+      display: none;
+    }
+    .faq-a.active {
+      display: block;
+    }
+
+    hr {
+      margin: 40px auto 32px;
+      max-width: 960px;
+      border: 0;
+      border-top: 1px solid #dedede;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 11px;
+      color: #777;
+      text-align: center;
+      border-top: 1px solid #eee;
+      padding-top: 16px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-main { gap: 18px; }
+      .hero-images-row { gap: 20px; }
+      .info-strip { grid-template-columns: repeat(2, minmax(140px, 1fr)); }
+      .coach { grid-template-columns: 1fr; }
+      .testimonials { grid-template-columns: 1fr 1fr; }
+      .learn-grid { grid-template-columns: 1fr; }
+      .about-organiser-box { grid-template-columns: 1fr; }
+      .whatsapp-cta { grid-column: 1; }
+    }
+    @media (max-width: 600px) {
+      .testimonials { grid-template-columns: 1fr; }
+      .info-strip { grid-template-columns: 1fr 1fr; }
+      .gaf-title { font-size: 22px; white-space: normal; }
+      .gaf-subtitle { font-size: 16px; }
+      .hero-topline { font-size: 16px; letter-spacing: 0.12em; }
+      .coach-social { flex-direction: column; gap: 12px; }
+    }
+	.list{
+	padding-left:15px;
+	}
+  </style>
+</head>
+<body>
+
+<<div class="page">
+   <header class="hero">
+      <div style="
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 48px;
+        flex-direction: row;
+      ">
+        <img src="logo.jpg" alt="Cost To Company" style="
+          width: 56px;
+          height: 56px;
+          object-fit: contain;
+          flex-shrink: 0;
+        " />
+        <div style="
+          font-size: 24px;
+          font-weight: 700;
+          letter-spacing: 0.05em;
+          color: #333;
+          line-height: 1.2;
+          text-align: center;
+        ">Cost To Company Presents</div>
+      </div>
+      
+      <div class="gaf-box" style="margin: 0 auto 16px;">
+        <div class="gaf-title">3-Days Business Expansion Bootcamp ( 10-1000 Customers)</div>
+        <div style="margin-top: 4px; font-size: 16px; font-weight: 700; color: #222; font-family: var(--font-family);">10-1000 வாடிக்கையாளர் தொழில் விரிவாக்க செயல்முறை</div>
+      </div>
+      
+      <div class="gaf-subtitle">
+       
+      </div>
+
+      <p>Business growth acceleration is not a luck. It is a system oriented, execution driven process.</p>
+      
+      <p>Master the Growth Acceleration Framework to organise your operations , marketing, sales and team-building efforts so that your business moves from random growth to predictable scale without losing authenticity.</p>
+    <div class="hero-main">
+        <div class="hero-images-row">
+          <div class="hero-growth-image">
+            <img src="gap.png" alt="Growth Acceleration Plan illustration" />
+          </div>
+        </div>
+
+      <div class="info-strip">
+        <div class="info-item">
+          <div class="info-item-title">DATE</div>
+          <div class="info-item-value">23rd - 25th FEB'26</div>
+        </div>
+        <div class="info-item">
+          <div class="info-item-title">TIME</div>
+          <div class="info-item-value">7 PM - 8:30 PM IST • Live</div>
+        </div>
+        <div class="info-item">
+          <div class="info-item-title">LANGUAGE</div>
+          <div class="info-item-value">தமிழ்</div>
+        </div>
+        <div class="info-item">
+          <div class="info-item-title">PLATFORM</div>
+          <div class="info-item-value">Online</div>
+        </div>
+      </div>
+    </div>
+
+    <a class="btn-primary cta-animated" href="https://rzp.io/rzp/WNrGDqr8" target="_blank" rel="noopener">
+      Get Your Tickets @499
+    </a>
+  </header>
+</header>
+
+  <hr>
+
+
+  <section>
+    <h2 class="section-title">Why Should I Attend</h2>
+    <div class="why-list">
+      <div class="why-item">
+        <div class="why-number">1</div>
+        <div class="why-text">
+          <h3>Operator experience over consultant expertise</h3>
+          <p>Learn directly from founders who have actually built and scaled MSME businesses, not just advised from the outside.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-number">2</div>
+        <div class="why-text">
+          <h3>Case studies over theories
+</h3>
+          <p>Work through real Tamilnadu MSME examples so you can see how each framework applies to day‑to‑day decisions.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-number">3</div>
+        <div class="why-text">
+          <h3>Decisions over choices
+</h3>
+          <p>Move from endless options to clear decisions using simple tools for prioritising products, channels and investments.</p>
+        </div>
+      </div>
+	  <div class="why-item">
+        <div class="why-number">4</div>
+        <div class="why-text">
+          <h3>Action over motivation</h3>
+          <p>
+Leave with a practical 90‑day execution plan instead of just inspiration that fades after the session.
+
+</p>
+        </div>
+      </div>
+
+      <div class="why-item">
+        <div class="why-number">5</div>
+        <div class="why-text">
+          <h3>Team performance vs individual intellect</h3>
+          <p>
+Shift from founder‑dependent decision making to a team that can execute reliably with shared numbers and dashboards.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:20px;">
+      <a class="btn-primary cta-animated" href="https://rzp.io/rzp/WNrGDqr8" target="_blank" rel="noopener">
+        Secure My Spot Now @499
+      </a>
+    </div>
+  </section>
+
+  <hr>
+
+  <section>
+    <h2 class="section-title">What Will I Learn</h2>
+    <p style="text-align:center; font-size:14px; color:#555; margin-bottom:18px;">
+      3-day intensive Growth Acceleration Framework for MSME business owners.
+    </p>
+
+    <div class="learn-grid">
+      <div class="feature-box">
+        <div class="feature-time">Day 1</div>
+        <div class="feature-title">Customer &amp; Growth Foundations</div>
+        <ul class="feature-list">
+          <li>Introduction (அறிமுகம்)</li>
+          <li>Speed, Velocity &amp; Acceleration (வேகம், திசைவேகம், முடுக்கம்)</li>
+          <li>Need for growth acceleration (வளர்ச்சி முடுக்கத்துக்கான தேவை)</li>
+          <li>Company stages (வளர்ச்சி நிலைகள்)</li>
+          <li>Case study – 1 (வணிக உதாரணம் 1)</li>
+          <li>Existing Customer Analysis (வாடிக்கையாளர் சீராய்வு)</li>
+          <li>Customer segmentation (வாடிக்கையாளர்வகைப்பாடு)</li>
+          <li>Business stage customer fit (தொழில் நிலை வாடிக்கையாளர் ஓப்புகை)</li>
+          <li>Case study – 2 (வணிக உதாரணம் 2)</li>
+		   <li>Business activity 1 (செயல் 1)</li>
+          <li>Q&amp;A (கேள்வி பதில்)</li>
+        </ul>
+      </div>
+
+      <div class="feature-box">
+        <div class="feature-time">Day 2</div>
+        <div class="feature-title">Offer, Positioning &amp; Marketing</div>
+        <ul class="feature-list">
+          <li>Customer persona (உகந்த வாடிக்கையாளர் வரையறை)</li>
+          <li>Case study – 3 (வணிக உதாரணம் 3)</li>
+          <li>Problem–Solution–Product Fit (பிரச்சனை – தீர்வு – பொருள் ஓப்புகை)</li>
+          <li>Product + Category Positioning (பொருள், பொருள் பிரிவு கட்டமைத்தல்)</li>
+          <li>Case study – 4 (வணிக உதாரணம் 4)</li>
+          <li>Message creation (தகவல் உருவாக்கம்)</li>
+          <li>Medium selection (ஊடக தேர்வு)</li>
+          <li>Distribution (பரப்புதல்)</li>
+          <li>Marketing (சந்தைப்படுத்துதல்)</li>
+          <li>Case study – 5 (வணிக உதாரணம் 5)</li>
+		  <li>Business activity 2 (செயல் 2)</li>
+          <li>Q&amp;A (கேள்வி பதில்)</li>
+        </ul>
+      </div>
+
+      <div class="feature-box">
+        <div class="feature-time">Day 3</div>
+        <div class="feature-title">Sales, Team &amp; Scale</div>
+        <ul class="feature-list">
+          <li>Sales (விற்பனை)</li>
+          <li>Sales lead management (விற்பனை தரவு மேலாண்மை)</li>
+          <li>Case study – 6 (வணிக உதாரணம் 6)</li>
+          <li>Sales funnel building (விற்பனை புனல் மேலாண்மை)</li>
+          <li>Case study – 7 (வணிக உதாரணம் 7)</li>
+          <li>Team building (குழு கட்டமைத்தல்)</li>
+          <li>Case study – 8 (வணிக உதாரணம் 8)</li>
+          <li>Common growth mistakes (வளர்ச்சியின்போது நடக்கும் தவறுகள்)</li>
+		  <li>30 days GAF sprint challenge ( 30 நாள் வளர்ச்சி சவால்)</li>
+          <li>Q&amp;A (கேள்வி பதில்)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:24px;">
+      <a class="btn-primary cta-animated" href="https://rzp.io/rzp/WNrGDqr8" target="_blank" rel="noopener">
+        Ready To Accelerate Growth @499
+      </a>
+      
+    </div>
+  </section>
+
+  <hr>
+
+  <section>
+    <h2 class="section-title">Meet Your Growth Partner</h2>
+    <div class="coach">
+      <div>
+        <img src="arul.jpg" alt="Coach on stage" />
+      </div>
+      <div>
+        <h3><a href="https://www.linkedin.com/in/arulmuruganpalanichamy/" target="_blank" rel="noopener">Arul Murugan Palanichamy</a></h3>
+        <div class="list">
+		<ul>
+		<li>Founder of Snackexperts &amp; Eadan Nutrition</li>
+		<li>Profitably running B2B &amp; B2C business for past 10+ years</li>
+		<li>Raised capital, gave successful exits to investors</li> 
+		<li>Winner of Ten Minute Million by IIT Bombay (25Lakh), TANSEED by StartupTN (10lakh), CII startupreneur award (3lakh)</li> 
+		<li>Consulted 25+ MSMEs and Startups to cross 1 crore revenue/year</li> 
+		<li>Mentoring multiple businesses on Business models, Unit economics &amp; Profitability, Growth acceleration</li> 
+		<li>Professor of Practice in Tamilnadu Agricultural University ( TNAU)
+
+<li>Subject Matter Expert for Food and Agriculture domain in multiple Global Expert Forums.</li>
+		</ul> 
+		</div>
+                
+
+              </div>
+    </div>
+             <!-- FEATURED IN SECTION - FAST SCROLL, CENTERED LAYOUT -->
+  <section style="margin-top: 64px; margin-bottom: 64px;">
+    <!-- Section Header -->
+    <div style="text-align: center; margin-bottom: 48px;">
+      <h2 style="
+        font-size: 32px;
+        font-weight: 800;
+        color: var(--dark);
+        margin-bottom: 16px;
+        letter-spacing: -0.01em;
+      ">Featured In</h2>
+      
+    </div>
+
+    <!-- Featured In Stages - CENTERED -->
+    <div style="margin-bottom: 48px;">
+      <h3 style="
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--dark);
+        margin-bottom: 28px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        text-align: center;
+      "> Stages</h3>
+      
+      <div style="
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        background: linear-gradient(to right, #ffffff 0%, rgba(255,255,255,0) 3%, rgba(255,255,255,0) 97%, #ffffff 100%);
+        padding: 20px 0;
+        border-top: 1px solid #f0f0f0;
+        border-bottom: 1px solid #f0f0f0;
+      ">
+        <div 
+          id="stages-scroll"
+          style="
+            display: flex;
+            gap: 56px;
+            animation: fastScroll 50s linear infinite;
+            width: fit-content;
+            white-space: nowrap;
+            padding: 0 28px;
+          ">
+          
+          <span style="flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #333; letter-spacing: 0.02em;">UNHCR</span>
+          <span style="flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #333; letter-spacing: 0.02em;">SICCI</span>
+          <span style="flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #333; letter-spacing: 0.02em;">CII</span>
+          <span style="flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #333; letter-spacing: 0.02em;">FICCI</span>
+          <span style="flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #333; letter-spacing: 0.02em;">National Agro Foundation</span>
+          <span style="flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #333; letter-spacing: 0.02em;">EDII Tamilnadu</span>
+          <span style="flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #333; letter-spacing: 0.02em;">IIT Madras</span>
+          <span style="flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #333; letter-spacing: 0.02em;">IIM Kozhikode</span>
+          <span style="flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #333; letter-spacing: 0.02em;">IIT Bombay</span>
+          <span style="flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #333; letter-spacing: 0.02em;">TNAU</span>
+          <span style="flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #333; letter-spacing: 0.02em;">StartupTN</span>
+          <span style="flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #333; letter-spacing: 0.02em;">Anna University</span>
+          <span style="flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #333; letter-spacing: 0.02em;">KCT (Kumaraguru)</span>
+          <span style="flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #333; letter-spacing: 0.02em;">AP Innovation Society</span>
+          <span style="flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #333; letter-spacing: 0.02em;">Jansons Business School</span>
+          <span style="flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #333; letter-spacing: 0.02em;">Eswar Engineering College</span>
+          <span style="flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #333; letter-spacing: 0.02em;">World Startup Expo</span>
+          <span style="flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #333; letter-spacing: 0.02em;">Get in the Ring Finals</span>
+          <span style="flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #333; letter-spacing: 0.02em;">NASSCOM Product Conclave</span>
+          <span style="flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #333; letter-spacing: 0.02em;">Startup Leadership Program</span>
+          <span style="flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #333; letter-spacing: 0.02em;">Headstart</span>
+          <span style="flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #333; letter-spacing: 0.02em;">JCI</span>
+          <span style="flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #333; letter-spacing: 0.02em;">Dhan Foundation</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Featured In Press - CENTERED -->
+    <div>
+      <h3 style="
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--dark);
+        margin-bottom: 28px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        text-align: center;
+      ">Press</h3>
+      
+      <div style="
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        background: linear-gradient(to right, #ffffff 0%, rgba(255,255,255,0) 3%, rgba(255,255,255,0) 97%, #ffffff 100%);
+        padding: 20px 0;
+        border-top: 1px solid #f0f0f0;
+        border-bottom: 1px solid #f0f0f0;
+      ">
+        <div 
+          id="press-scroll"
+          style="
+            display: flex;
+            gap: 56px;
+            animation: fastScroll 40s linear infinite;
+            width: fit-content;
+            white-space: nowrap;
+            padding: 0 28px;
+          ">
+          
+          <span style="flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #333; letter-spacing: 0.02em;">The Hindu</span>
+          <span style="flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #333; letter-spacing: 0.02em;">YourStory</span>
+          <span style="flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #333; letter-spacing: 0.02em;">Dinamalar</span>
+          <span style="flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #333; letter-spacing: 0.02em;">Vikatan</span>
+          <span style="flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #333; letter-spacing: 0.02em;">Deccan Chronicle</span>
+          <span style="flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #333; letter-spacing: 0.02em;">Times of India</span>
+          <span style="flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #333; letter-spacing: 0.02em;">The New Indian Express</span>
+          <span style="flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #333; letter-spacing: 0.02em;">Rediff</span>
+          <span style="flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #333; letter-spacing: 0.02em;">Cauvery Business</span>
+          <span style="flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #333; letter-spacing: 0.02em;">Indian Retailer</span>
+          <span style="flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #333; letter-spacing: 0.02em;">LBB</span>
+          <span style="flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #333; letter-spacing: 0.02em;">Solvable</span>
+          <span style="flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #333; letter-spacing: 0.02em;">Livemint</span>
+          <span style="flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #333; letter-spacing: 0.02em;">Economic Times</span>
+        </div>
+      </div>
+    </div>
+	<div style="grid-column: 1 / -1; text-align: center; margin-top: 24px;">
+  <a class="btn-primary cta-animated"
+     href="https://rzp.io/rzp/WNrGDqr8"
+     target="_blank"
+     rel="noopener">
+    Meet Your Growth Partner @499
+  </a>
+</div>
+
+  </section>
+
+  <!-- Fast Scroll Animation CSS -->
+  <style>
+    @keyframes fastScroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(calc(-50% - 28px));
+      }
+    }
+
+    #stages-scroll {
+      animation: fastScroll 50s linear infinite;
+    }
+
+    #press-scroll {
+      animation: fastScroll 40s linear infinite;
+    }
+
+    #stages-scroll:hover,
+    #press-scroll:hover {
+      animation-play-state: paused;
+    }
+
+    /* Smooth color transition on hover */
+    #stages-scroll span,
+    #press-scroll span {
+      transition: color 0.3s ease;
+    }
+
+    #stages-scroll:hover span,
+    #press-scroll:hover span {
+      color: var(--yellow);
+    }
+  </style>
+
+<hr>
+
+  <section>
+    <h2 class="section-title">Wall Of Love</h2>
+    <div class="testimonials">
+      <div class="testimonial-card">
+        <p>"I am Dr. Sathya Arumugam, Founder of Aram Aagaarangal, a food venture started @ 2023, manufacturing instant health drinks. As I am from Microbiology, Biotechnology & Food Science background, it is easier to formulate, evaluate & manufacture a product. 
+However, it was tough to handle the marketing, at the entry level. Last year I approached Ms. Pavithra regarding Trademark filing, and the journey continues till date. The weekly seminar on various segments arranged by her, expanded my knowledge on business.
+Recently I have attended Business Expansion webinar by Mr. Arul Murugan, Founder & CEO, Snack Expert, arranged by Ms. Pavithra, Cost to Company. I have attended many of his talks related to pricing & market fit. This particular series opened my eyes very broadly and specially, the Do’s and Don’t’s of a firm  based on its current potential. He also suggested which channel like distribution or e-commerce suits better for a firm. His case studies and explanations are wonderful always. I am always a fan for his deep thoughts on product market fit earlier vs. current scenario."</p>
+        <div class="testimonial-name">Dr.Sathya Arumugam</div>
+        <div class="testimonial-role">Founder, Aram Aagaarangal</div>
+      </div>
+	  <div class="testimonial-card">
+        <p>" I am Vijay Raghavan, partner at New Tech Molds. We manufacture all types of dies and molds, including aluminium die casting molds, injection molds, patterns, core boxes, core masks, all types of press tools, and jigs and fixtures.
+Before Cost To Company’s consulting, I did not know how to achieve my goals, but after their support, I believe I can achieve them by following Mr. Arul Murugan’s step-by-step guidelines. I am confident that I am now on the right path towards my goals. Thank you very much to Mr. Arul Murugan and Ms. Pavithra for their guidance. "</p>
+        <div class="testimonial-name">Mr.Vijay Raghavan</div>
+        <div class="testimonial-role">Partner, New Tech Mould</div>
+      </div>
+	  <div class="testimonial-card">
+        <p>" I attended the Growth Acceleration Framework program for my business, and it was extremely useful. The sessions helped me clearly understand brand repositioning and product redesign from a strategic perspective.
+I gained valuable insights into pricing innovations the right way and making data-driven marketing decisions. Most importantly, the course enabled me to start building clear standards and structured processes within my business, which has already improved consistency and decision-making.
+I highly recommend this program to business owners who want practical, real-world guidance to scale their business sustainably.  "</p>
+        <div class="testimonial-name">Mr.Sekar</div>
+        <div class="testimonial-role">Founder, Cybiean Aatigence Tech Pvt Limited</div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- YOUTUBE VIDEO SECTION - MOBILE OPTIMIZED -->
+  <section style="margin-top: 40px; margin-bottom: 40px;">
+    <h2 class="section-title">Watch the introductory video on Growth Acceleration Framework</h2>
+    
+    
+    <!-- Responsive Video Container -->
+    <div style="
+      max-width: 100%;
+      margin: 0 auto;
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 18px;
+      box-shadow: 0 14px 34px rgba(0,0,0,0.35);
+    ">
+      <iframe 
+        style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: none;
+          border-radius: 18px;
+        "
+        src="https://www.youtube.com/embed/zbc_66zm3U8" 
+        title="Growth Acceleration Framework - Introductory Video"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+ <section style="text-align:center; margin-top:44px;">
+    <h2 class="section-title">Ready To Elevate Your Business?</h2>
+    <p style="font-size:14px; color:#555; max-width:600px; margin:0 auto 18px;">
+      Join Growth Acceleration Framework and turn scattered marketing and sales efforts into a clear, repeatable system for MSME growth.
+    </p>
+    <a class="btn-primary cta-animated" href="https://rzp.io/rzp/WNrGDqr8" target="_blank" rel="noopener">
+      Elevate My Business @499
+    </a>
+  
+  </section>
+
+
+  <!-- Responsive Video Media Query CSS -->
+  <style>
+    /* Desktop: Full width with max constraints */
+    @media (min-width: 1200px) {
+      section:has(> div[style*="padding-bottom: 56.25"]) {
+        padding: 0 32px;
+      }
+      section:has(> div[style*="padding-bottom: 56.25"]) > div {
+        max-width: 900px !important;
+        margin: 0 auto !important;
+      }
+    }
+
+    /* Tablet: Slightly reduced */
+    @media (max-width: 900px) and (min-width: 601px) {
+      section:has(> div[style*="padding-bottom: 56.25"]) {
+        padding: 0 24px;
+      }
+      section:has(> div[style*="padding-bottom: 56.25"]) > div {
+        max-width: 100% !important;
+        margin: 0 auto !important;
+      }
+    }
+
+    /* Mobile: Full responsive */
+    @media (max-width: 600px) {
+      section:has(> div[style*="padding-bottom: 56.25"]) {
+        margin-top: 32px !important;
+        margin-bottom: 32px !important;
+        padding: 0 16px;
+      }
+      
+      section:has(> div[style*="padding-bottom: 56.25"]) > h2 {
+        font-size: 24px !important;
+        margin-bottom: 16px !important;
+      }
+      
+      section:has(> div[style*="padding-bottom: 56.25"]) > p {
+        font-size: 13px !important;
+        margin-bottom: 20px !important;
+      }
+      
+      section:has(> div[style*="padding-bottom: 56.25"]) > div {
+        max-width: 100% !important;
+        margin: 0 !important;
+        border-radius: 12px;
+      }
+    }
+  </style>
+<hr>
+
+ <div class="about-organiser-wrapper">
+  <h2 class="about-organiser-title">About Organiser</h2>
+    <div style="max-width: 960px; margin: 0 auto 24px; padding: 0 18px; text-align: center;">
+	<p style="font-size: 14px; color: #555; line-height: 1.7;">
+    “தாளாற்றித் தந்த பொருளெல்லாம் தக்கார்க்கு வேளாண்மை செய்தற் பொருட்டு.”
+  </p>
+  <p style="font-size: 15px; color: #333; line-height: 1.8; margin-bottom: 8px; font-weight: 500;">
+    Cost To Company is a business knowledge repository & consulting firm, working with an objective to provide deep expertise & actionable insights in an easily understandable manner to MSME companies.
+  </p>
+  
+</div>
+
+	<div class="about-organiser-box">
+	<div class="about-organiser-item">
+        <div class="about-organiser-item-title">100+ On‑Demand Experts</div>
+        <div class="about-organiser-item-desc">
+Sector‑specific (Food, Agri, Textile, Engineering, Construction, etc.) and domain‑specific (Marketing, Sales, Legal, HR, Accounts, Digital, etc.) experts available to give you practical guidance when you need it</div>
+      </div>
+	 <div class="about-organiser-item">
+        <div class="about-organiser-item-title">Built For Tier 3 &amp; 4 MSME Founders</div>
+        <div class="about-organiser-item-desc">Tamil‑first content tuned to the realities of small‑town and emerging entrepreneurs.</div>
+      </div>
+	<div class="about-organiser-item">
+        <div class="about-organiser-item-title">7,000+ MSME Founders & Entrepreneurs
+</div>
+        <div class="about-organiser-item-desc">Join 2,000+ business owners in our active WhatsApp community and 5,000+ subscribers getting weekly insights on our Tamil Substack—all designed for founders who want to scale their businesses.</div>
+      </div>
+      <div class="about-organiser-item">
+        <div class="about-organiser-item-title">Every Saturday – Free MSME Webinar</div>
+        <div class="about-organiser-item-desc">Live 5 – 6 PM with business founders &amp; subject‑matter experts sharing what actually works.</div>
+      </div>
+     <div style="grid-column: 1 / -1; text-align: center; margin-top: 24px;">
+  <a class="btn-primary cta-animated"
+     href="https://rzp.io/rzp/WNrGDqr8"
+     target="_blank"
+     rel="noopener">
+    Join our Community @499
+  </a>
+</div>
+
+  </div>
+  <hr>
+  <section>
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq">
+      <div class="faq-item">
+        <div class="faq-q">I already have a business running. Will this still help?</div>
+        <div class="faq-a">Absolutely. The frameworks focus on acceleration, so you can plug them into your existing marketing and sales to get more structured growth.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is the session interactive?</div>
+        <div class="faq-a">Yes. There will be live Q&amp;A, hot seats and case study discussions where you can ask questions about your own business.Recordings will be provided to registered participants for limited-time access</div>
+      </div>
+	  <div class="faq-item">
+        <div class="faq-q">Can I avail services from CTC for my specific business problem? </div>
+        <div class="faq-a"> Yes.You can. Apart from courses, we have 100+ curated founder experts who can quickly provide solutions on a nominal charge basis. pls whatsapp at 9003800231.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I join the WhatsApp community for free?</div>
+        <div class="faq-a"> yes. WhatsApp community and Saturday webinars are free for everyone. To get updates and join, pls  whatsapp 9003800231</div>
+      </div>
+    </div>
+  </section>
+
+    <!-- WHATSAPP SUPPORT STRIP -->
+	
+	<br>
+    <div style="
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 18px 20px;
+  border-radius: 40px;
+  border: 1px solid #e5e5e5;
+  background: #ffffff;
+">
+
+  <p style="
+    margin: 0;
+    font-size: 14px;
+    color: #333333;
+    line-height: 1.6;
+    flex: 1;
+  ">
+    Still have questions? Connect with our team directly on WhatsApp.
+  </p>
+
+  <a href="https://wa.me/919003800231" target="_blank" rel="noopener" style="
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 96px;
+    height: 40px;
+    border-radius: 999px;
+    background: #25d366;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+  ">
+    Chat on
+  </a>
+</div>
+
+<style>
+  @media (max-width: 600px) {
+    .faq-chat-wrapper {
+      flex-direction: column;
+      align-items: stretch;
+      text-align: center;
+    }
+  }
+</style>
+
+
+
+  <footer>
+    <div>© 2025 Cost To Company. All rights reserved.</div>
+    <div>Powered by Cost To Company • Designed by Cost To Company</div>
+<p style="
+      font-size: 12px;
+      color: #666;
+      max-width: 900px;
+      margin: 0 auto;
+      line-height: 1.6;
+      letter-spacing: 0.01em;
+      padding: 0;
+    ">
+      <strong>Facebook Disclaimer:</strong> This site is not part of the Facebook website or Facebook Inc. Additionally, this site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.
+    </p>
+</div>
+  </footer>
+
+
+<script>
+  // Enhanced FAQ toggle with visual feedback
+  document.querySelectorAll('.faq-q').forEach(function (q) {
+    q.addEventListener('click', function () {
+      const a = this.nextElementSibling;
+      const isActive = a.classList.contains('active');
+      
+      // Close all other FAQs
+      document.querySelectorAll('.faq-a.active').forEach(item => {
+        if (item !== a) {
+          item.classList.remove('active');
+          item.previousElementSibling.classList.remove('active');
+        }
+      });
+      
+      // Toggle current FAQ
+      a.classList.toggle('active');
+      this.classList.toggle('active');
+    });
+  });
+</script>
+
+</body>
+</html>
