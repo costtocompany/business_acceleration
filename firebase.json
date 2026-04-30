@@ -23,6 +23,13 @@
         "**/.*",
         "**/node_modules/**"
       ],
+      "redirects": [
+        {
+          "source": "/join",
+          "destination": "https://pages.razorpay.com/pl_Sg52n73KktPE8W/view",
+          "type": 302
+        }
+      ],
       "rewrites": [
         {
           "source": "**",
