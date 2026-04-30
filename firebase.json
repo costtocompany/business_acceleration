@@ -8,6 +8,24 @@
         "**/.*",
         "**/node_modules/**"
       ],
+      "headers": [
+        {
+          "source": "/join",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, must-revalidate"
+            }
+          ]
+        }
+      ],
+      "redirects": [
+        {
+          "source": "/join",
+          "destination": "https://pages.razorpay.com/pl_Sg52n73KktPE8W/view",
+          "type": 302
+        }
+      ],
       "rewrites": [
         {
           "source": "**",
@@ -22,6 +40,17 @@
         "firebase.json",
         "**/.*",
         "**/node_modules/**"
+      ],
+      "headers": [
+        {
+          "source": "/join",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, must-revalidate"
+            }
+          ]
+        }
       ],
       "redirects": [
         {
@@ -44,6 +73,24 @@
         "firebase.json",
         "**/.*",
         "**/node_modules/**"
+      ],
+      "headers": [
+        {
+          "source": "/join",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, must-revalidate"
+            }
+          ]
+        }
+      ],
+      "redirects": [
+        {
+          "source": "/join",
+          "destination": "https://pages.razorpay.com/pl_Sg52n73KktPE8W/view",
+          "type": 302
+        }
       ],
       "rewrites": [
         {
